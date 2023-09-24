@@ -8,7 +8,7 @@ add_link_options(-framework CoreFoundation)
 include_directories(/Users/rahimahmedov/.local/include)
 
 
-add_executable(projectX src/raft/server.cpp src/raft/proto/service.grpc.pb.h src/raft/proto/service.grpc.pb.cc src/raft/proto/service.pb.cc src/raft/proto/service.pb.h src/raft/states.h src/lsmtree/rbtree.h src/tests/rbtree_test.cpp src/tests/rbtree_test.h src/lsmtree/bloom.h src/tests/bloom_test.cpp)
+add_executable(projectX src/raft/server.cpp src/raft/proto/service.grpc.pb.h src/raft/proto/service.grpc.pb.cc src/raft/proto/service.pb.cc src/raft/proto/service.pb.h src/raft/states.h)
 target_link_directories(projectX PUBLIC /Users/rahimahmedov/.local/lib)
 target_link_libraries(projectX
         protobuf
@@ -133,5 +133,6 @@ add_executable(thread_check src/raft/thread_check.cpp)
 
 add_executable(rbtree src/lsmtree/rbtree.h src/tests/rbtree_test.cpp src/tests/rbtree_test.h)
 
-
 add_executable(bloom src/lsmtree/bloom.h src/tests/bloom_test.cpp)
+
+add_executable(btree src/lsmtree/btree.h src/tests/btree_test.cpp src/tests/btree_test.h)
